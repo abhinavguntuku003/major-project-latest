@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/major-project-latest/static/css/main.1d99ba72.css",
+    "main.js": "/major-project-latest/static/js/main.e7d52cdb.js",
+    "static/js/483.a765abdd.chunk.js": "/major-project-latest/static/js/483.a765abdd.chunk.js",
+    "static/js/787.498e3191.chunk.js": "/major-project-latest/static/js/787.498e3191.chunk.js",
+    "static/media/labimg.jpg": "/major-project-latest/static/media/labimg.a512f49d329d68779917.jpg",
+    "static/media/cancerlogo.png": "/major-project-latest/static/media/cancerlogo.300dfe3695b78012b4bd.png",
+    "static/media/mainlogo.jpg": "/major-project-latest/static/media/mainlogo.46d761ad4a5e38daa34e.jpg",
+    "static/media/signupimg.svg": "/major-project-latest/static/media/signupimg.1ac21b15cfc71e58616a67a3bbd9eaf8.svg",
+    "static/media/bloodimagenew.jpg": "/major-project-latest/static/media/bloodimagenew.1b7f8dc600efe3c0070c.jpg",
+    "static/media/loginimg.svg": "/major-project-latest/static/media/loginimg.73aaaffd3766a76407d0c137507faf68.svg",
+    "index.html": "/major-project-latest/index.html",
+    "main.1d99ba72.css.map": "/major-project-latest/static/css/main.1d99ba72.css.map",
+    "main.e7d52cdb.js.map": "/major-project-latest/static/js/main.e7d52cdb.js.map",
+    "483.a765abdd.chunk.js.map": "/major-project-latest/static/js/483.a765abdd.chunk.js.map",
+    "787.498e3191.chunk.js.map": "/major-project-latest/static/js/787.498e3191.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1d99ba72.css",
+    "static/js/main.e7d52cdb.js"
+  ]
+}
