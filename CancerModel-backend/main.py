@@ -6,9 +6,6 @@ import requests
 from io import BytesIO
 from flask_cors import CORS
 app = Flask(__name__)
-import os
-os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
-
 CORS(app)
 # Load the TensorFlow Lite model.
 interpreter = tf.lite.Interpreter(model_path="model.tflite")

@@ -10,6 +10,7 @@ import Detection from './components/Detection/Detection'
 import Home from './components/Home/Home'
 import Hospitals from './components/Hospitals/Hospitals'
 import AboutCancer from './components/AboutCancer/AboutCancer'
+
 function App() {
   return (
     <div>
@@ -21,6 +22,7 @@ function App() {
         <Route path='/aboutcancer' element={<Protected><AboutCancer /></Protected>}/>
         <Route path='/hospitals' element={<Protected><Hospitals /></Protected>}/>
         <Route path='/detection' element={<Protected><Detection /></Protected>}/>        
+         
       </Routes>
       <ToastContainer/>
     </div>

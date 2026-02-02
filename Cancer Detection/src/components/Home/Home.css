@@ -1,77 +1,296 @@
-.imagecarousel{
-    width: 70rem;
-    display: block;
-    margin: auto;    
-    margin-top: 70px;
+/* =========================
+   Global Helpers
+========================= */
+p {
+  margin-bottom: 1rem;
 }
-.cimage{
-    height: 500px;
+
+/* =========================
+   Hero Section
+========================= */
+.hero {
+  width: 100%;
+  height: 320px;
+  margin-top: 60px;
+  position: relative;
+  overflow: hidden;
 }
-p{
-    font-size: larger;
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.9);
+  animation: fadeZoom 1.2s ease-in-out;
 }
-footer{
-    
-    background: rgb(12, 15, 88);
-    height: auto;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding-top: 40px;
-    color: #fff;
+
+/* Fix stacking order */
+.hero {
+  position: relative;
+  z-index: 1;
 }
-.footer-content{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.intro-section {
+  position: relative;
+  z-index: 2;
+}
+
+
+@keyframes fadeZoom {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   Intro Section
+========================= */
+.intro-section {
+  background: #ffffff;
+  padding: 3.5rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  max-width: 1200px;
+  margin: 3rem auto;
+}
+
+.intro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+  gap: 2rem;
+}
+
+.intro-text-wrapper {
+  flex: 1;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.btn-primary {
+  padding: 0.85rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  background: #0066cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+}
+.btn-check:hover {
+  background: #0052a3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 102, 204, 0.3);
+}
+
+/* Title + Button row */
+.intro-title-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Keep subtitle below */
+.section-subtitle {
+  margin-top: 0.75rem;
+}
+
+.intro-content {
+  margin-top: 2rem;
+}
+
+.intro-description {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #444;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+
+.cancer-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.cancer-card {
+  background: #fafafa;
+  padding: 1.75rem;
+  border-radius: 12px;
+  border-left: 4px solid #0066cc;
+  transition: all 0.3s ease;
+}
+
+.cancer-card:hover {
+  background: #f5f5f5;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.cancer-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+}
+
+.cancer-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+.overview{
+    margin-top:70px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .intro-section {
+    padding: 2rem 1.5rem;
+    margin: 2rem 1rem;
+  }
+  
+  .intro-header {
     flex-direction: column;
-    text-align: center;
+    align-items: stretch;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .btn-check {
+    width: 100%;
+  }
+  
+  .cancer-types {
+    grid-template-columns: 1fr;
+  }
 }
-.footer-content h3{
-    font-size: 1.8rem;
-    font-weight: 400;
-    text-transform: capitalize;
-    line-height: 3rem;
-}
-.footer-content p{
-    max-width: 500px;
-    margin: 10px auto;
-    line-height: 28px;
-    font-size: 14px;
-}
-.socials{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem 0 3rem 0;
-}
-.socials li{
-    margin: 0 10px;
 
-}
-.socials a{
-    text-decoration: none;
-    color: #fff;
 
+
+/* =========================
+   Image Carousel
+========================= */
+.imagecarousel {
+  max-width: 1100px;
+  margin: 70px auto;
 }
-.socials a i{
-    font-size: 1.1rem;
-    transition: color .4s ease;
+
+.cimage {
+  height: 500px;
+  object-fit: cover;
+  border-radius: 12px;
 }
-.socials a:hover i{
-    color: rgb(71, 148, 20);
+
+/* =========================
+   Footer
+========================= */
+footer {
+  background: linear-gradient(135deg, #0c0f58, #242c8a);
+  padding-top: 40px;
+  color: #fff;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
-.footer-bottom{
-    background: rgb(36, 44, 138);
-    padding: 20px 0;
-    text-align: center;
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-.footer-bottom p{
-    font-size: 14px;
-    word-spacing: 2px;
-    text-transform: capitalize;
+
+.footer-content h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
-.footer-bottom span{
-    text-transform: uppercase;
-    opacity: .4;
-    font-weight: 200;
+
+.footer-content p {
+  max-width: 520px;
+  margin: 0.5rem auto;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Social Icons */
+.socials {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin: 1.5rem 0 2.5rem;
+  padding: 0;
+}
+
+.socials a {
+  color: #fff;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.socials a:hover {
+  color: #8be36f;
+  transform: translateY(-2px);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background: #1c2370;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+@media (max-width: 768px) {
+  .hero {
+    height: 220px;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .cimage {
+    height: 320px;
+  }
 }
