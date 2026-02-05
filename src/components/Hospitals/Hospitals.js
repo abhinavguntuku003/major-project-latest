@@ -17,7 +17,7 @@ function Hospitals() {
       <div class="container">
       <div class="card">
         <div class="card-header">
-          <img src="https://www.healthcareitnews.com/sites/hitn/files/Screen%20Shot%202022-10-27%20at%201.55.04%20PM.jpg" alt="" />
+          <img src="https://s.ndtvimg.com//images/entities/300/all-india-institute-of-medical-sciences_636408332923854512_108334.jpg" alt="" />
         </div>
         <div class="card-body">
           <h4>All India Institute Of Medical Sciences, Delhi (Government Hospital)</h4>

@@ -7,7 +7,7 @@ import SideBar from './SideBar';
 import './maps.css'
 const Token = "pk.eyJ1Ijoic2Fpa3VtYXIzIiwiYSI6ImNscjRtemcycTFnMXkyam8xOXIzMG9oMWgifQ.EMbgdqSKTvIrE0yjrC20_w"
 function Maps() {
-    document.querySelector('title').textContent = "CancerCare | Hospitals"
+    document.querySelector('title').textContent = "CancerCare | Maps"
     const [location, setLocation] = useState([17.39732591351507, 78.49027731768723])
     const [viewport, setViewport] = useState({
         latitude: 17.39732591351507,

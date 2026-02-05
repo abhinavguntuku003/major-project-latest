@@ -74,7 +74,7 @@ function Detection() {
               <h4 className='text-center mt-4'>Result : {cancerStatus}</h4>
             </div>
             <div className="modal-footer">
-              {cancerStatus !== "No Cancer" && <button type="button" className='btn btn-success' onClick={() => navigate('/maps')}>Get Hospitals</button>}
+              {cancerStatus !== "No-Cancer Detected " && <button type="button" className='btn btn-success' onClick={() => navigate('/maps')}>Get Hospitals</button>}
               <button type="button" className="btn btn-secondary" onClick={() => navigate('/aboutcancer')}>Know More</button>
               <button type="button" className="btn btn-secondary" onClick={() => setModalOpen(false)}>Close</button>
             </div>

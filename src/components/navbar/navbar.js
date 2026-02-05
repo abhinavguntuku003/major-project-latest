@@ -1,70 +1,149 @@
-import { VscThreeBars } from "react-icons/vsc";
-import { useDispatch, useSelector } from 'react-redux'
-import { NavLink, useNavigate } from 'react-router-dom'
-import canerlogo from '../../Assests/cancerlogo.png'
-import { FaUserCircle } from "react-icons/fa";
-import profileimg from '../../Assests/profileimg.png'
-import { MdLogout } from "react-icons/md";
-import { logout } from "../../redux/Actions";
-import './navbar.css'
-function Navbar() {
-    const { username, email } = useSelector(state => state.loginreducer)
-    const dispatch = useDispatch()
-    let navigate = useNavigate()
-    const onlogout = () => {
-        localStorage.clear()
-        dispatch(logout())
-        navigate('/')
-    }
-    return (
-        <div className='header'>
-            <nav className="navbar navbar-expand-lg">
-                <div className="container-fluid">
-                    <NavLink className="logo" to='/'><img src={canerlogo} height="50px" width="50px" alt="" />Cancer Care</NavLink>
-                    <button className="navbar-toggler navbtn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="toggler"><VscThreeBars /></span>
-                    </button>
-                    <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-                        <ul className="navbar-nav gap-4">
-                            <li className="nav-item">
-                                <NavLink className="nav-link text-light" to='/home'><i class="fa fa-home"></i>Home</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link text-light" to='/detection'><i class="fa fa-flask"></i>Lab</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link text-light" to='/maps'><i class="fa fa-map-marker"></i>Maps</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link text-light" to='/aboutcancer'><i class="fa fa-info-circle"></i>About Cancer</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link text-light" to='/hospitals'><i class="fa fa-hospital-o"></i>Hospitals</NavLink>
-                            </li>
-                            <li>
-                                <i style={{ fontSize: "27px", color: "white", cursor: "pointer" }} data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><FaUserCircle /></i>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <div className="offcanvas offcanvas-end" data-bs-scroll="true" tabIndex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-                <div className="offcanvas-header d-flex justify-content-end">
+// import { VscThreeBars } from "react-icons/vsc";
+// import { useDispatch, useSelector } from 'react-redux'
+// import { NavLink, useNavigate } from 'react-router-dom'
+// import canerlogo from '../../Assests/cancerlogo.png'
+// import { FaUserCircle } from "react-icons/fa";
+// import profileimg from '../../Assests/profileimg.png'
+// import { MdLogout } from "react-icons/md";
+// import { logout } from "../../redux/Actions";
+// import './navbar.css'
+// function Navbar() {
+//     const { username, email } = useSelector(state => state.loginreducer)
+//     const dispatch = useDispatch()
+//     let navigate = useNavigate()
+//     const onlogout = () => {
+//         localStorage.clear()
+//         dispatch(logout())
+//         navigate('/')
+//     }
+//     return (
+//         <div className='header'>
+//             <nav className="navbar navbar-expand-lg">
+//                 <div className="container-fluid">
+//                     <NavLink className="logo" to='/'><img src={canerlogo} height="50px" width="50px" alt="" />Cancer Care</NavLink>
+//                     <button className="navbar-toggler navbtn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+//                         <span className="toggler"><VscThreeBars /></span>
+//                     </button>
+//                     <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+//                         <ul className="navbar-nav gap-4">
+//                             <li className="nav-item">
+//                                 <NavLink className="nav-link text-light" to='/home'><i class="fa fa-home"></i>Home</NavLink>
+//                             </li>
+//                             <li className="nav-item">
+//                                 <NavLink className="nav-link text-light" to='/detection'><i class="fa fa-flask"></i>Lab</NavLink>
+//                             </li>
+//                             <li className="nav-item">
+//                                 <NavLink className="nav-link text-light" to='/maps'><i class="fa fa-map-marker"></i>Maps</NavLink>
+//                             </li>
+//                             <li className="nav-item">
+//                                 <NavLink className="nav-link text-light" to='/aboutcancer'><i class="fa fa-info-circle"></i>About Cancer</NavLink>
+//                             </li>
+//                             <li className="nav-item">
+//                                 <NavLink className="nav-link text-light" to='/hospitals'><i class="fa fa-hospital-o"></i>Hospitals</NavLink>
+//                             </li>
+//                             <li>
+//                                 <i style={{ fontSize: "27px", color: "white", cursor: "pointer" }} data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><FaUserCircle /></i>
+//                             </li>
+//                         </ul>
+//                     </div>
+//                 </div>
+//             </nav>
+//             <div className="offcanvas offcanvas-end" data-bs-scroll="true" tabIndex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+//                 <div className="offcanvas-header d-flex justify-content-end">
 
-                    <button type="button" className="btn-close mt-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div className="offcanvas-body">
-                    <img src={profileimg} className="d-block mx-auto" width="300px" alt="" />
-                    <div className="mt-4 fs-5 text-center">
-                        <p>{username}</p><hr />
-                        <p>{email}</p><hr />
-                        {/* <p>History</p><hr /> */}
-                        <p style={{ cursor: "pointer" }} onClick={() => onlogout()}>logout <i><MdLogout /></i></p>
-                    </div>
-                </div>
-            </div>
+//                     <button type="button" className="btn-close mt-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+//                 </div>
+//                 <div className="offcanvas-body">
+//                     <img src={profileimg} className="d-block mx-auto" width="300px" alt="" />
+//                     <div className="mt-4 fs-5 text-center">
+//                         <p>{username}</p><hr />
+//                         <p>{email}</p><hr />
+//                         {/* <p>History</p><hr /> */}
+//                         <p style={{ cursor: "pointer" }} onClick={() => onlogout()}>logout <i><MdLogout /></i></p>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     )
+// }
+
+// export default Navbar
+import React from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { VscThreeBars } from "react-icons/vsc";
+import { FaUserCircle } from "react-icons/fa";
+import { MdLogout } from "react-icons/md";
+
+// import logo from "../../assets/cancerlogo.png";
+// import profileImg from "../../assets/profileimg.png";
+import { logout } from "../../redux/Actions";
+import "./navbar.css";
+
+function Navbar() {
+  const { username, email } = useSelector((state) => state.loginreducer);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.clear();
+    dispatch(logout());
+    navigate("/");
+  };
+
+  return (
+    <header className="header">
+      <nav className="navbar navbar-expand-lg">
+        <div className="container-fluid">
+          <NavLink className="logo" to="/home">
+            {/* <img src={logo} height="40" width="40" alt="Logo" /> */}
+            <span>CancerCare</span>
+          </NavLink>
+
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span className="toggler"><VscThreeBars /></span>
+          </button>
+
+          <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul className="navbar-nav gap-4">
+              <li><NavLink className="nav-link" to="/home">🏠 Home</NavLink></li>
+              <li><NavLink className="nav-link" to="/detection">🧪 Lab</NavLink></li>
+              <li><NavLink className="nav-link" to="/maps">🗺️ Maps</NavLink></li>
+              <li><NavLink className="nav-link" to="/aboutcancer">ℹ️ About Cancer</NavLink></li>
+              <li><NavLink className="nav-link" to="/hospitals">🏥 Hospitals</NavLink></li>
+              <li>
+                <FaUserCircle 
+                  className="profile-icon"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#profileSidebar"
+                />
+              </li>
+            </ul>
+          </div>
         </div>
-    )
+      </nav>
+
+      {/* Profile Sidebar */}
+      <div className="offcanvas offcanvas-end" id="profileSidebar">
+        <div className="offcanvas-header justify-content-end">
+          <button type="button" className="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div className="offcanvas-body text-center">
+          {/* <img src={profileImg} width="200" alt="profile" /> */}
+          <h5 className="mt-3">{username}</h5>
+          <p>{email}</p>
+          <button onClick={handleLogout} className="btn btn-outline-danger mt-3">
+            Logout <MdLogout />
+          </button>
+        </div>
+      </div>
+    </header>
+  );
 }
 
-export default Navbar
+export default Navbar;
